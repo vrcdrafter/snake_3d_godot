@@ -1,0 +1,7 @@
+[gd_resource type="PrismMesh" load_steps=2 format=3 uid="uid://bmwuinw48ru1c"]
+
+[ext_resource type="Material" uid="uid://bevwfnq7txcy5" path="res://material_tri.tres" id="1_irfqh"]
+
+[resource]
+material = ExtResource("1_irfqh")
+subdivide_width = 1

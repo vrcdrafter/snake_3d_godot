@@ -1,0 +1,25 @@
+A projection of a point in 3D space onto a line is the closest point on the line to the given point. To find the projection, you need to know the coordinates of the point and the direction of the line. Here is one possible method:
+
+- Let P = (x, y, z) be the point and L = (a, b, c) be the direction of the line. 
+- Normalize L by dividing it by its length: N = L / |L| = (a / √(a² + b² + c²), b / √(a² + b² + c²), c / √(a² + b² + c²)).
+- Compute the dot product of P and N: D = P ⋅ N = x * (a / √(a² + b² + c²)) + y * (b / √(a² + b² + c²)) + z * (c / √(a² + b² + c²)).
+- Multiply N by D to get the projection: Q = D * N = (D * a / √(a² + b² + c²), D * b / √(a² + b² + c²), D * c / √(a² + b² + c²)).
+
+The point Q is the projection of P onto the line with direction L. You can check that Q lies on the line and that P - Q is perpendicular to L.
+
+For more information, you can check out these web pages:
+
+- [Projection on a line](^1^)
+- [Projection of point on line in 3D](^4^)
+- [Projection onto a plane](^6^)
+
+Source: Conversation with Bing, 10/30/2023
+(1) Projection on a line - University of California, Berkeley. https://inst.eecs.berkeley.edu/~ee127/sp21/livebook/l_vecs_proj.html.
+(2) c# - projection of point on line in 3D - Stack Overflow. https://stackoverflow.com/questions/7023240/projection-of-point-on-line-in-3d.
+(3) Projection onto a plane - Mathematics Stack Exchange. https://math.stackexchange.com/questions/1872783/projection-onto-a-plane.
+(4) . https://bing.com/search?q=projection+of+a+point+in+3d+space+onto+a+line.
+(5) linear algebra - project a point in 3D on a given plane - Mathematics .... https://math.stackexchange.com/questions/444968/project-a-point-in-3d-on-a-given-plane.
+(6) c++ - How to project a point onto a plane in 3D? - Stack Overflow. https://stackoverflow.com/questions/9605556/how-to-project-a-point-onto-a-plane-in-3d.
+(7) undefined. https://www.khanacademy.org/math/linear-algebra/alternate-bases/orthogonal-projections/v/linear-alg-visualizing-a-projection-onto-a-plane.
+(8) undefined. https://math.stackexchange.com/questions/62633/orthogonal-projection-of-a-point-onto-a-line.
+(9) undefined. http://www.zshare.net/download/93560594d8f74429/.

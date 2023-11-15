@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://dgpjxoygnvyy4"]
+
+[ext_resource type="Script" path="res://assets/simple_fpsplayer/Player.gd" id="1_1fhis"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_euj4i"]
+
+[sub_resource type="Curve3D" id="Curve3D_4dpde"]
+bake_interval = 18.49
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.457568, -1.06436, -0.686985, 0, 0, 0, 0, 0, 0, 0.582522, -0.887259, -0.308261, 0, 0, 0, 0, 0, 0, 0.790533, -0.840938, 0.482901, 0, 0, 0, 0, 0, 0, 0.0648994, -0.833525, 0.777259, 0, 0, 0, 0, 0, 0, -0.771191, -0.7862, -0.716439, 0, 0, 0, 0, 0, 0, 0.759769, -0.466244, -0.429268, 0, 0, 0, 0, 0, 0, 0.730572, -0.443003, 0.153285, 0, 0, 0, 0, 0, 0, 0.700422, -0.419005, 0.754782, 0, 0, 0, 0, 0, 0, -0.552572, -0.343432, 0.494703, 0, 0, 0, 0, 0, 0, -0.615156, -0.289001, -1.0578, 0, 0, 0, 0, 0, 0, 0.168191, -0.289767, -1.41094, 0, 0, 0, 0, 0, 0, 0.612841, -0.245335, -0.759194, 0, 0, 0, 0, 0, 0, 0.531074, -0.167085, 0.347742, 0, 0, 0, 0, 0, 0, 0.263443, 0.258528, 1.02674, 0, 0, 0, 0, 0, 0, -0.274561, 0.348525, 0.912405, 0, 0, 0, 0, 0, 0, -0.543748, 0.340968, -0.659748),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 16
+
+[sub_resource type="PrismMesh" id="PrismMesh_mu6wa"]
+
+[node name="Player" type="CharacterBody3D"]
+disable_mode = 2
+floor_max_angle = 0.802851
+script = ExtResource("1_1fhis")
+
+[node name="body" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_euj4i")
+
+[node name="rotation_helper" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="Camera3D" type="Camera3D" parent="rotation_helper"]
+
+[node name="Path3D" type="Path3D" parent="."]
+curve = SubResource("Curve3D_4dpde")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Path3D"]
+transform = Transform3D(0.430589, 0, 0, 0, 5.95029e-08, 0.333915, 0, -4.98981, 3.98189e-09, 0, 3.05299e-08, -2.56018)
+mesh = SubResource("PrismMesh_mu6wa")
