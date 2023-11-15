@@ -25,7 +25,7 @@ extends Node3D
 @onready var path1 = $Path3D/PathFollow3D
 var bone_speed = 3.0
 var length = 0.0
-@onready var heading_handle =$steve
+@onready var heading_handle =$steve  # note steve needs to be close to the player immediatly . and have no clipping ------- >>>>>> ERROR OR IMPROVEMENT
 var mat = preload("res://material_tri.tres")
 var pos_1 
 var pos_2
