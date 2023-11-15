@@ -56,9 +56,9 @@ var player_rotation_angle
 var triangle = MeshInstance3D.new()
 
 # ensnarement curve data 
-var curve_array_point = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-var curve_array_in = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-var curve_array_out = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+var curve_array_point = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+var curve_array_in = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+var curve_array_out = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 var ensnared = false
 
 func _ready():
@@ -131,7 +131,7 @@ func _physics_process(delta):
 		summation_distance = 0 
 		#print("curve length ", length, "number of points ", line.curve.get_baked_points()) 
 		
-	$Path3D2/PathFollow3D.progress += 5.0 * delta
+
 	
 	# # test for moving triangle to where the first point is
 	var point = move_point($Player/Path3D.curve.get_point_position(0),$Player)
@@ -175,7 +175,7 @@ func _physics_process(delta):
 		
 		# then populate new points coming from players curve 
 		var i = 0
-		while (i < 15) and not ensnared:
+		while (i < 16) and not ensnared:
 			var num_of_points_at_moment = line.curve.point_count
 			var curve_point_pos = move_point(curve_array_point[i],$Player/Path3D)
 			var curve_point_in = move_point(curve_array_point[i],$Player/Path3D)
